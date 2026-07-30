@@ -3,6 +3,6 @@ def clamp(value, low, high):
     if value < low:
         return low
     elif value > high:
-        return low  # bug: should return `high` here
+        return high
     else:
         return value
