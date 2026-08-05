@@ -1,3 +1,4 @@
+import pytest
 from clamp import clamp
 
 
@@ -11,3 +12,8 @@ def test_clamp_within_range():
 
 def test_clamp_above_range():
     assert clamp(15, 0, 10) == 10
+
+
+def test_clamp_invalid_range():
+    with pytest.raises(ValueError, match="low must be <= high"):
+        clamp(5, 10, 0)
